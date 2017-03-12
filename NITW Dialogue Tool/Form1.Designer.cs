@@ -453,7 +453,7 @@
             this.btnDisableDebugMode.Name = "btnDisableDebugMode";
             this.btnDisableDebugMode.Size = new System.Drawing.Size(156, 23);
             this.btnDisableDebugMode.TabIndex = 21;
-            this.btnDisableDebugMode.Text = "Diable Debug Mode";
+            this.btnDisableDebugMode.Text = "Disable Debug Mode";
             this.btnDisableDebugMode.UseVisualStyleBackColor = true;
             this.btnDisableDebugMode.Click += new System.EventHandler(this.btnDisableDebugMode_Click);
             // 

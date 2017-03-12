@@ -1,6 +1,7 @@
 # NITW Dialouge Tool
 
-Tool to edit Night in the Woods dialogue. For more info on the yarn format see [InfiniteAmmoInc/Yarn](https://github.com/InfiniteAmmoInc/Yarn) and for more info on editing specific to NITW see [Editing Dialogue on the wiki](https://nightinthewoods.gamepedia.com/Editing_Dialogue).
+Tool to edit Night in the Woods dialogue.
+For more info on the yarn format see [InfiniteAmmoInc/Yarn](https://github.com/InfiniteAmmoInc/Yarn) and for more info on editing specific to NITW see [Editing Dialogue on the NITW wiki](https://nightinthewoods.gamepedia.com/Editing_Dialogue).
 
 ### How To
 
