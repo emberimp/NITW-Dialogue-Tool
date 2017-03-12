@@ -1,15 +1,21 @@
 # NITW Dialouge Tool
 
-This tool lets you edit the dialogue in Night in the Woods. 
+Tool to edit Night in the Woods dialogue. For more info on the yarn format see [InfiniteAmmoInc/Yarn](https://github.com/InfiniteAmmoInc/Yarn) and for more info on editing specific to NITW see [Editing Dialogue on the wiki](https://nightinthewoods.gamepedia.com/Editing_Dialogue).
 
-# How To
+### How To
 
   - Check if the path is correct on the "More" tab
   - Press the "Run Setup" button
   - Once the setup is complete press the "Enable File Watcher" button
-  - Edit a .yarn file in the "yarn files" folder
+  - Edit a .yarn.txt file in the "yarn files" folder
   - Start NITW and your edits should be there (to see changes NITW must be restarted)
 
 Protip: Enable NITW debug mode by pressing the "Enable Debug Mode" button and press TAB on the logo screen and main menu to speed through them.
+
+### Thanks
+
+  - DerPopo for [UABE](https://7daystodie.com/forums/showthread.php?22675-Unity-Assets-Bundle-Extractor) and his wisdom
+  - Paul C. Smith for [FileOps](https://www.codeproject.com/Articles/17716/Insert-Text-into-Existing-Files-in-C-Without-Temp)
+  - @Kett#2371 and @Gabbah#6034 for testing
 
 ![Screenshot](/screenshot.png?raw=true)
