@@ -4,6 +4,7 @@ Tool to edit Night in the Woods dialogue. For more info on the yarn format see [
 
 ### How To
 
+  - [Download](releases) the latest version, extract it somehwere and open it
   - Check if the path is correct on the "More" tab
   - Press the "Run Setup" button
   - Once the setup is complete press the "Enable File Watcher" button
