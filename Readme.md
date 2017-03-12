@@ -1,6 +1,7 @@
-# NITW Dialouge Tool
+# NITW Dialogue Tool
 
 Tool to edit Night in the Woods dialogue.
+
 For more info on the yarn format see [InfiniteAmmoInc/Yarn](https://github.com/InfiniteAmmoInc/Yarn) and for more info on editing specific to NITW see [Editing Dialogue on the NITW wiki](https://nightinthewoods.gamepedia.com/Editing_Dialogue).
 
 ### How To
@@ -18,6 +19,6 @@ Protip: Enable NITW debug mode by pressing the "Enable Debug Mode" button and pr
 
   - DerPopo for [UABE](https://7daystodie.com/forums/showthread.php?22675-Unity-Assets-Bundle-Extractor) and his wisdom
   - Paul C. Smith for [FileOps](https://www.codeproject.com/Articles/17716/Insert-Text-into-Existing-Files-in-C-Without-Temp)
-  - @Kett#2371 and @Gabbah#6034 for testing
+  - Kett and Gabbah for testing
 
 ![Screenshot](/screenshot.png?raw=true)
