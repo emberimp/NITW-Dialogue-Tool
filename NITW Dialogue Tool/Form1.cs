@@ -365,6 +365,7 @@ namespace NITW_Dialogue_Tool
                 btnWatcher.Text = "Enable File Watcher";
                 rootz.fileWatcher = false;
             }
+            JsonUtil.saveYarnDictionary(rootz);
         }
 
         private void btnSaveSettings_Click(object sender, EventArgs e)
