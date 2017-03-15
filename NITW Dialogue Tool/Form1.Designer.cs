@@ -69,7 +69,7 @@
             this.labelDebugMode = new System.Windows.Forms.Label();
             this.labelSetup = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
-            this.labelEmberimp = new System.Windows.Forms.Label();
+            this.labelCredits = new System.Windows.Forms.Label();
             this.btnSaveSettings = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageMain.SuspendLayout();
@@ -95,7 +95,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNITWpath.Location = new System.Drawing.Point(8, 23);
             this.txtNITWpath.Name = "txtNITWpath";
-            this.txtNITWpath.Size = new System.Drawing.Size(706, 20);
+            this.txtNITWpath.Size = new System.Drawing.Size(714, 20);
             this.txtNITWpath.TabIndex = 1;
             // 
             // btnDebugMode
@@ -148,7 +148,7 @@
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(838, 308);
+            this.txtLog.Size = new System.Drawing.Size(846, 316);
             this.txtLog.TabIndex = 8;
             // 
             // btnWatcher
@@ -190,7 +190,7 @@
             this.tabControl1.MinimumSize = new System.Drawing.Size(763, 382);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(806, 382);
+            this.tabControl1.Size = new System.Drawing.Size(814, 390);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPageMain
@@ -202,7 +202,7 @@
             this.tabPageMain.Location = new System.Drawing.Point(4, 22);
             this.tabPageMain.Name = "tabPageMain";
             this.tabPageMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMain.Size = new System.Drawing.Size(798, 356);
+            this.tabPageMain.Size = new System.Drawing.Size(806, 364);
             this.tabPageMain.TabIndex = 0;
             this.tabPageMain.Text = "Main";
             this.tabPageMain.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(599, 11);
+            this.linkLabel1.Location = new System.Drawing.Point(551, 11);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(247, 13);
             this.linkLabel1.TabIndex = 11;
@@ -234,7 +234,7 @@
             this.tabFiles.Location = new System.Drawing.Point(4, 22);
             this.tabFiles.Name = "tabFiles";
             this.tabFiles.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFiles.Size = new System.Drawing.Size(798, 356);
+            this.tabFiles.Size = new System.Drawing.Size(806, 364);
             this.tabFiles.TabIndex = 2;
             this.tabFiles.Text = "Files";
             this.tabFiles.UseVisualStyleBackColor = true;
@@ -262,7 +262,7 @@
             this.dgvFiles.Location = new System.Drawing.Point(3, 3);
             this.dgvFiles.Name = "dgvFiles";
             this.dgvFiles.RowHeadersVisible = false;
-            this.dgvFiles.Size = new System.Drawing.Size(792, 350);
+            this.dgvFiles.Size = new System.Drawing.Size(800, 358);
             this.dgvFiles.TabIndex = 0;
             this.dgvFiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiles_CellContentClick_1);
             // 
@@ -342,7 +342,7 @@
             this.tabPageMore.Controls.Add(this.labelDebugMode);
             this.tabPageMore.Controls.Add(this.labelSetup);
             this.tabPageMore.Controls.Add(this.labelVersion);
-            this.tabPageMore.Controls.Add(this.labelEmberimp);
+            this.tabPageMore.Controls.Add(this.labelCredits);
             this.tabPageMore.Controls.Add(this.btnSaveSettings);
             this.tabPageMore.Controls.Add(this.labelPath);
             this.tabPageMore.Controls.Add(this.txtNITWpath);
@@ -352,7 +352,7 @@
             this.tabPageMore.Location = new System.Drawing.Point(4, 22);
             this.tabPageMore.Name = "tabPageMore";
             this.tabPageMore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMore.Size = new System.Drawing.Size(798, 356);
+            this.tabPageMore.Size = new System.Drawing.Size(806, 364);
             this.tabPageMore.TabIndex = 1;
             this.tabPageMore.Text = "More";
             this.tabPageMore.UseVisualStyleBackColor = true;
@@ -360,7 +360,7 @@
             // btnFindEditorPath
             // 
             this.btnFindEditorPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFindEditorPath.Location = new System.Drawing.Point(720, 61);
+            this.btnFindEditorPath.Location = new System.Drawing.Point(728, 61);
             this.btnFindEditorPath.Name = "btnFindEditorPath";
             this.btnFindEditorPath.Size = new System.Drawing.Size(67, 23);
             this.btnFindEditorPath.TabIndex = 27;
@@ -383,7 +383,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEditorPath.Location = new System.Drawing.Point(8, 62);
             this.txtEditorPath.Name = "txtEditorPath";
-            this.txtEditorPath.Size = new System.Drawing.Size(706, 20);
+            this.txtEditorPath.Size = new System.Drawing.Size(714, 20);
             this.txtEditorPath.TabIndex = 25;
             // 
             // cbEditor
@@ -399,7 +399,7 @@
             // btnFindNITWPath
             // 
             this.btnFindNITWPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFindNITWPath.Location = new System.Drawing.Point(720, 21);
+            this.btnFindNITWPath.Location = new System.Drawing.Point(728, 21);
             this.btnFindNITWPath.Name = "btnFindNITWPath";
             this.btnFindNITWPath.Size = new System.Drawing.Size(67, 23);
             this.btnFindNITWPath.TabIndex = 23;
@@ -491,27 +491,27 @@
             // labelVersion
             // 
             this.labelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelVersion.Location = new System.Drawing.Point(667, 325);
+            this.labelVersion.Location = new System.Drawing.Point(678, 317);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(125, 13);
             this.labelVersion.TabIndex = 14;
             this.labelVersion.Text = "v0.0.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelEmberimp
+            // labelCredits
             // 
-            this.labelEmberimp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEmberimp.Location = new System.Drawing.Point(664, 338);
-            this.labelEmberimp.Name = "labelEmberimp";
-            this.labelEmberimp.Size = new System.Drawing.Size(128, 13);
-            this.labelEmberimp.TabIndex = 13;
-            this.labelEmberimp.Text = "by emberimp";
-            this.labelEmberimp.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelCredits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCredits.Location = new System.Drawing.Point(675, 330);
+            this.labelCredits.Name = "labelCredits";
+            this.labelCredits.Size = new System.Drawing.Size(128, 32);
+            this.labelCredits.TabIndex = 13;
+            this.labelCredits.Text = "by emberimp\r\nand AlexWaveDiver";
+            this.labelCredits.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnSaveSettings
             // 
             this.btnSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSaveSettings.Location = new System.Drawing.Point(8, 109);
+            this.btnSaveSettings.Location = new System.Drawing.Point(8, 113);
             this.btnSaveSettings.Name = "btnSaveSettings";
             this.btnSaveSettings.Size = new System.Drawing.Size(156, 23);
             this.btnSaveSettings.TabIndex = 12;
@@ -523,7 +523,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 382);
+            this.ClientSize = new System.Drawing.Size(814, 390);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(822, 421);
@@ -559,7 +559,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageMain;
         private System.Windows.Forms.TabPage tabPageMore;
-        private System.Windows.Forms.Label labelEmberimp;
+        private System.Windows.Forms.Label labelCredits;
         private System.Windows.Forms.Button btnSaveSettings;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label labelRestore;

@@ -17,7 +17,7 @@ namespace NITW_Dialogue_Tool
 {
     public partial class Form1 : Form
     {
-        string version = "1.0.0";
+        string version = "1.1.0";
 
         yarnDictionary rootz = JsonUtil.loadYarnDictionary();
         FileSystemWatcher watcher = new FileSystemWatcher();
