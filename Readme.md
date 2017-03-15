@@ -17,6 +17,7 @@ Protip: Enable NITW debug mode by pressing the "Enable Debug Mode" button and pr
 
 ### Thanks
 
+  - AlexWaveDiver for his contributions
   - DerPopo for [UABE](https://7daystodie.com/forums/showthread.php?22675-Unity-Assets-Bundle-Extractor) and his wisdom
   - Paul C. Smith for [FileOps](https://www.codeproject.com/Articles/17716/Insert-Text-into-Existing-Files-in-C-Without-Temp)
   - Kett and Gabbah for testing
