@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Runtime.InteropServices;
+using NITW_Dialogue_Tool.Resources;
 
 namespace NITW_Dialogue_Tool
 {
@@ -67,6 +68,24 @@ namespace NITW_Dialogue_Tool
                 txtNITWpath.Text = rootz.nitwPath;
             }
 
+            if (String.IsNullOrEmpty(rootz.textEd))
+            {
+                txtEditorPath.Text = Environment.SystemDirectory + "\\notepad.exe";
+                cbEditor.Checked = true;
+                txtEditorPath.Enabled = false;
+                btnFindEditorPath.Enabled = false;
+            }
+            else
+            {
+                txtEditorPath.Text = rootz.textEd;
+            }
+
+            if (rootz.fileWatcher == true && btnWatcher.Enabled == true)
+            {
+                watcher.EnableRaisingEvents = true;
+                updateWatcherButton();
+            }
+
             //init file tab
             fillDgvFiles(rootz.yarnFiles);
 
@@ -89,14 +108,31 @@ namespace NITW_Dialogue_Tool
             var senderGrid = (DataGridView)sender;
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+                e.RowIndex >= 0 && senderGrid.Rows[0].Cells[1].Value.ToString() != "Please \"Run Setup\" on the \"More\" tab")
             {
                 string buttonText = senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 string yarnFileName = senderGrid.Rows[e.RowIndex].Cells["columnFile"].Value.ToString();
                 if (buttonText.Contains("Open"))
                 {
-                    string yarnFilePath = AppDomain.CurrentDomain.BaseDirectory + @"\yarn files\" + yarnFileName;
-                    Process.Start(yarnFilePath);
+                    string yarnFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"yarn files", yarnFileName);
+
+                    Debug.WriteLine(yarnFilePath);
+                    if (String.IsNullOrEmpty(rootz.textEd))
+                    {
+                        frmEditor frmEd = new frmEditor();
+                        frmEd.yarnFile = yarnFileName;
+                        frmEd.yarnPath = yarnFilePath;
+                        frmEd.Show();
+                    }
+                    else
+                    {
+                        DirectoryInfo yarnFileInfo = new DirectoryInfo(yarnFilePath);
+                        ProcessStartInfo editorInfo = new ProcessStartInfo();
+                        editorInfo.FileName = rootz.textEd;
+                        editorInfo.Arguments = String.Format(@"""{0}""", yarnFileInfo.FullName);
+                        Process.Start(editorInfo);
+                    }                   
+
                     dgvFiles.ClearSelection();
                 }
                 else if (buttonText.Contains("Write"))
@@ -107,6 +143,7 @@ namespace NITW_Dialogue_Tool
                 }
                 else if (buttonText.Contains("Reset"))
                 {
+                    bool watcherStatus = watcher.EnableRaisingEvents;
                     //tabControl1.SelectedIndex = 0;
                     watcher.EnableRaisingEvents = false;
                     updateWatcherButton();
@@ -115,6 +152,11 @@ namespace NITW_Dialogue_Tool
                     restoryYarn(rootz.yarnFiles[yarnFileName.Replace(".txt", "")], true);
                     
                     updateDgvFilesRow(e.RowIndex);
+                    if (watcherStatus == true)
+                    {
+                        watcher.EnableRaisingEvents = true;
+                        updateWatcherButton();
+                    }
                 }
             }
         }
@@ -302,7 +344,6 @@ namespace NITW_Dialogue_Tool
         private void btnWatcher_Click(object sender, EventArgs e)
         {
             watcher.EnableRaisingEvents = !watcher.EnableRaisingEvents;
-
             updateWatcherButton();
         }
 
@@ -314,6 +355,7 @@ namespace NITW_Dialogue_Tool
                 labelWatcher.Text = "File Watcher Enabled";
                 labelWatcher.BackColor = Color.LightGreen;
                 btnWatcher.Text = "Disable File Watcher";
+                rootz.fileWatcher = true;
             }
             else
             {
@@ -321,12 +363,22 @@ namespace NITW_Dialogue_Tool
                 labelWatcher.Text = "File Watcher Disabled";
                 labelWatcher.BackColor = Color.Tomato;
                 btnWatcher.Text = "Enable File Watcher";
+                rootz.fileWatcher = false;
             }
+            JsonUtil.saveYarnDictionary(rootz);
         }
 
         private void btnSaveSettings_Click(object sender, EventArgs e)
         {
             rootz.nitwPath = txtNITWpath.Text;
+            if (cbEditor.Checked == true)
+            {
+                rootz.textEd = "";
+            }
+            else
+            {
+                rootz.textEd = txtEditorPath.Text;
+            }
             JsonUtil.saveYarnDictionary(rootz);
         }
 
@@ -392,12 +444,81 @@ namespace NITW_Dialogue_Tool
         {
             Process.Start("https://nightinthewoods.gamepedia.com/Editing_Dialogue");
         }
+
+        private void btnFindNITWPath_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                if (Directory.Exists(txtNITWpath.Text))
+                {
+                    fbd.SelectedPath = txtNITWpath.Text;
+                }
+                else
+                {
+                    fbd.SelectedPath = "";
+                }
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    if (File.Exists(fbd.SelectedPath + @"\Night in the Woods_Data\sharedassets14.assets"))
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("This will overwrite all .yarn.txt files! \r\nAre you sure?", "Restore", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    }
+                }
+            }
+        }
+
+        private void dgvFiles_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbEditor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbEditor.Checked)
+            {
+                txtEditorPath.Enabled = false;
+                btnFindEditorPath.Enabled = false;
+            }
+            else
+            {
+                txtEditorPath.Enabled = true;
+                btnFindEditorPath.Enabled = true;
+            }
+        }
+
+        private void btnFindEditorPath_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdTextEditor = new OpenFileDialog();
+
+            ofdTextEditor.Filter = "Applications|*.exe|All Files|*.*";
+            ofdTextEditor.FilterIndex = 1;
+            ofdTextEditor.Multiselect = true;
+            
+            DialogResult result = ofdTextEditor.ShowDialog();
+
+            if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(ofdTextEditor.FileName) && File.Exists(ofdTextEditor.FileName))
+            {
+                txtEditorPath.Text = ofdTextEditor.FileName;
+            }
+        }
     }
 
     class yarnDictionary
     {
         [JsonProperty("nitwPath")]
         public string nitwPath { get; set; }
+
+        [JsonProperty("textEd")]
+        public string textEd { get; set; }
+
+        [JsonProperty("fileWatcher")]
+        public bool fileWatcher { get; set; }
 
         [JsonProperty("gregg_rootz_ok")]
         public Dictionary<string, yarnFile> yarnFiles { get; set; }
